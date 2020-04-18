@@ -13,22 +13,13 @@ class Country extends Component {
         selected: false
     }
 
-    componentDidMount(){
-        //this.props.getCountryData('serbia');
-    }
-
     onCountrySelect = (e,country) => {
-        console.log(country);
         this.props.getCountryData(country);
         this.setState({selected: true});
     }
 
     render() {
         const countryNames = this.props.statisticsData.map(item => item.country).sort();
-        
-        if(!this.props.loading){
-            console.log('podaci za drzavu', this.props.countryStats)
-        }
 
         return (
             <Grid container direction='column'>

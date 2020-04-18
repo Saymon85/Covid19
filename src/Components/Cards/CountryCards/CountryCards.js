@@ -7,11 +7,7 @@ import cx from 'classnames';
 const CountryCards = (props) => {
     const {active, recovered } = props.countryStats[0].cases;
     const { deaths, tests, day} = props.countryStats[0];
-    console.log(active, recovered, deaths, tests, day);
-    /* if(props.countryStats){
-        console.log(props.countryStats[0]);
-    } */
-    
+
     return (
         <div className={classes.container}> 
           <Grid container item spacing={3} justify='center'>

@@ -29,7 +29,6 @@ export const fetchCountryData = (country) => {
     return dispatch => {
         axios.get(url, covid19Headers)
             .then(res => {
-                console.log(res.data.response);
                 dispatch(fetchCountryDataSuccess(res.data.response));
             })
             .catch(err => fetchCountryDataFail(err));

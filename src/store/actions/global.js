@@ -36,7 +36,6 @@ export const fetchGlobalData = () => {
         const fetchDailyStats = axios.get(dailyStatsAPI);
         axios.all([fetchStatistics, fetchGlobalStats, fetchDailyStats])
             .then( res => {
-                console.log(res);
                 const statistics = res[0].data.response;
                 const globalStats = [
                     res[1].data.confirmed,

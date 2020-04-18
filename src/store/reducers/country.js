@@ -14,7 +14,6 @@ const fetchCountryDataStart = (state) => {
 }
 
 const fetchCountryDataSuccess = (state, countryData) => {
-    console.log(countryData);
     return {
         ...state,
         countryStats: countryData,

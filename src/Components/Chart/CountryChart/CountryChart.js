@@ -5,7 +5,6 @@ import { Bar } from 'react-chartjs-2';
 function CountryChart(props) {
     const {active, recovered } = props.countryStats[0].cases;
     const { country, deaths, day} = props.countryStats[0];
-    console.log(active, country, deaths.total);
     const data = {
         labels: ['Active', 'Recovered', 'Deaths'],
         datasets: [

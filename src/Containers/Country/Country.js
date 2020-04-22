@@ -13,9 +13,13 @@ class Country extends Component {
         selected: false
     }
 
-    onCountrySelect = (e,country) => {
-        this.props.getCountryData(country);
-        this.setState({selected: true});
+    onCountrySelect = (e, country) => {
+        if(country){
+            this.props.getCountryData(country);
+            this.setState({selected: true});
+        }else{
+            this.setState({selected: false});
+        }
     }
 
     render() {
@@ -78,6 +82,3 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Country, axios);
-
-
-//<div>{this.props.countryStats[0].country}</div>

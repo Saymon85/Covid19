@@ -19,7 +19,8 @@ export const dailyStatsAPI = 'https://covid19.mathdro.id/api/daily';
 
 // API provided by Corona virus monitor from rapid API by Aleh Stsiatsko
 
-export const historyAPI = 'https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php?country=';
+export const historyByCountryAPI = 'https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php?country=';
+export const historyByDateAPI = 'https://coronavirus-monitor.p.rapidapi.com/coronavirus/history_by_particular_country_by_date.php?country=';
 export const historyAPIHeaders = {
     headers: {
 		  "x-rapidapi-host": "coronavirus-monitor.p.rapidapi.com",

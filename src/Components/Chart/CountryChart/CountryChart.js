@@ -1,17 +1,17 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
 import { Bar } from 'react-chartjs-2';
+import { Grid } from '@material-ui/core';
 
 function CountryChart(props) {
-    const {active, recovered } = props.countryStats[0].cases;
+    const { active, recovered } = props.countryStats[0].cases;
     const { country, deaths, day} = props.countryStats[0];
     const data = {
         labels: ['Active', 'Recovered', 'Deaths'],
         datasets: [
             {
-                label: `Bar chart stats for ${country} on ${new Date(day).toDateString()}`,
-                backgroundColor: ['#536dfe','#69f0ae', '#e57373'],
-                data:[active, recovered, deaths.total]
+               label: `Bar chart stats for ${country} on ${new Date(day).toDateString()}`,
+               backgroundColor: ['#536dfe','#69f0ae', '#e57373'],
+               data:[active, recovered, deaths.total]
             }
         ]
 

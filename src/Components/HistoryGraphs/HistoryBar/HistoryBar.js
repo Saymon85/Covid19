@@ -20,12 +20,12 @@ const HistoryBar = (props) => {
     return (
         <Grid item style={{width: '80%', margin:'20px auto'}}>
             <Bar
-            data={data}
-            width={100}
-            height={500}
-            options={{
-                maintainAspectRatio: false
-            }}
+              data={data}
+              width={100}
+              height={500}
+              options={{
+                 maintainAspectRatio: false
+             }}
             />                 
         </Grid>
     )

@@ -55,8 +55,11 @@ const HistoryOptions = (props) => {
                                 <em>None</em>
                             </MenuItem>
                             <MenuItem value={10}>10</MenuItem>
+                            <MenuItem value={15}>15</MenuItem>
                             <MenuItem value={20}>20</MenuItem>
                             <MenuItem value={30}>30</MenuItem>
+                            <MenuItem value={45}>45</MenuItem>
+                            <MenuItem value={1000}>All</MenuItem>
                           </Select>
                         <FormHelperText>Please select number of last days for showing history</FormHelperText>
                     </FormControl>

@@ -7,13 +7,15 @@ import HistoryOptions from '../../Components/HistoryOptions/HistoryOptions';
 import Modal from '../../Components/Modal/Modal';
 import classes from './History.module.css';
 import { formatDate } from '../../utilities/utilities';
+import HistoryCharts from '../../Components/HistoryGraphs/HistoryCharts/HistoryCharts';
+import HistoryBar from '../../Components/HistoryGraphs/HistoryBar/HistoryBar';
 
 
 class History extends Component {
 
     state = {
         selectedCountry: '',
-        numOfDays: 0,
+        numOfDays: '',
         dateSelected: new Date(),
         dateDisabled: false,
         showGraphs: false,
@@ -22,38 +24,39 @@ class History extends Component {
     }
 
     onCountrySelect = (e, country) => {
-        if(country){
-          this.setState({selectedCountry: country});
-        }else{
-          this.setState({selectedCountry: ''});
-        }  
+      if(country){
+        this.setState({selectedCountry: country});
+      }else{
+        this.setState({selectedCountry: ''});
+      }  
     }
 
     onNumOfDaysSelected = (e) => {
-        if(e.target.value){
-           this.setState({
-             numOfDays: e.target.value,
-             dateDisabled: true
-           })
-        }else{
-           this.setState({
-             numOfDays: e.target.value,
-             dateDisabled: false
-           })
-        }
+      if(e.target.value){
+         this.setState({
+           numOfDays: e.target.value,
+           dateDisabled: true
+         })
+      }else{
+         this.setState({
+           numOfDays: e.target.value,
+           dateDisabled: false
+         })
+      }
     }
 
     onDateSelected = (date) => {
-        this.setState({dateSelected: date.toDateString()});
+      this.setState({dateSelected: date.toDateString()});
     }
 
     showGraphs = () => {
       if(this.state.dateDisabled){
         if(!this.state.selectedCountry){
-           this.setState({showModal: true, modalMessage:'You must select country'});
+          this.setState({showModal: true, modalMessage:'You must select country'});
         }else{ 
           const country = `country=${this.state.selectedCountry}`;
           this.props.getHistoryData(country);
+          this.setState({showGraphs: true});
         }
       }else{
         if(!this.state.selectedCountry){
@@ -63,6 +66,7 @@ class History extends Component {
            const dateFormated = formatDate(date);
            const country = `country=${this.state.selectedCountry}&day=${dateFormated}`;
            this.props.getHistoryData(country);
+           this.setState({showGraphs: true});
         }
       }
     }
@@ -106,8 +110,16 @@ class History extends Component {
                       Show graphs
                     </Button>
                   </Grid>
+                  <Grid container item direction='column'>
+                     {  this.state.showGraphs && this.props.historyData
+                          ? this.state.dateDisabled
+                              ? <HistoryCharts data={this.props.historyData} numOfDays={this.state.numOfDays} /> 
+                              : <HistoryBar data={this.props.historyData} />
+                          : null 
+                      }
+                  </Grid>
               </Grid>
-            </>  
+            </>    
         )
     }
 }

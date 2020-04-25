@@ -7,6 +7,7 @@ import {
     Grid,
     TableHead, 
    } from '@material-ui/core';
+   import classes from './Table.module.css';
 
 
 const DataTable = (props) => {
@@ -15,7 +16,7 @@ const DataTable = (props) => {
 
     console.log(statistics);
     return (
-        <Grid xs={12} sm={12} item style={{textAlign: 'center', minWidth: '70%', margin:'30px 50px'}}>
+        <Grid xs={12} sm={12} item className={classes.wrap}>
             <Table>
                 <TableHead>
                     <TableRow>

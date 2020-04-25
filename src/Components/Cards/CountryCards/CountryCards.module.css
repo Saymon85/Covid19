@@ -22,3 +22,9 @@
 .tested{
     border-bottom: 10px solid #ffcc80;
 }
+
+@media only screen and (max-width: 960px){
+    .card{
+        margin-bottom: 20px !important;
+    }
+}

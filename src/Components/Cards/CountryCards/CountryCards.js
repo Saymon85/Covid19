@@ -10,8 +10,8 @@ const CountryCards = (props) => {
 
     return (
         <div className={classes.container}> 
-          <Grid container item spacing={3} justify='center'>
-             <Grid item component={Card} xs={12} sm={3} md className={cx(classes.card, classes.confirmed)}>
+          <Grid container item spacing={2} justify='center'>
+             <Grid item component={Card} xs={12} sm={4} md className={cx(classes.card, classes.confirmed)}>
                 <CardContent>
                     <Typography color='textSecondary' gutterBottom>Infected</Typography>
                     <Typography variant='h5'>
@@ -23,7 +23,7 @@ const CountryCards = (props) => {
                     <Typography variant='body2'>Number of active cases of COVID19</Typography>
                 </CardContent>
              </Grid>
-             <Grid item component={Card} xs={12} sm={3} md className={cx(classes.card, classes.recovered)}>
+             <Grid item component={Card} xs={12} sm={4} md className={cx(classes.card, classes.recovered)}>
                 <CardContent>
                     <Typography color='textSecondary' gutterBottom>Recovered</Typography>
                     <Typography variant='h5'>
@@ -35,7 +35,7 @@ const CountryCards = (props) => {
                     <Typography variant='body2'>Number of recovered from COVID19</Typography>
                 </CardContent>
              </Grid>
-             <Grid item component={Card} xs={12} sm={3} md className={cx(classes.card, classes.deaths)}>
+             <Grid item component={Card} xs={12} sm={4} md className={cx(classes.card, classes.deaths)}>
                 <CardContent>
                     <Typography color='textSecondary' gutterBottom>Deaths</Typography>
                     <Typography variant='h5'>
@@ -47,7 +47,7 @@ const CountryCards = (props) => {
                     <Typography variant='body2'>Number of died from COVID19</Typography>
                 </CardContent>
              </Grid>
-             <Grid item component={Card} xs={12} sm={3}  md className={cx(classes.card, classes.tested)}>
+             <Grid item component={Card} xs={12} sm={4}  md className={cx(classes.card, classes.tested)}>
                 <CardContent>
                     <Typography color='textSecondary' gutterBottom>Tested</Typography>
                     <Typography variant='h5'>

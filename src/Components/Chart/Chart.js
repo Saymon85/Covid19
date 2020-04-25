@@ -1,6 +1,7 @@
 import React from 'react';
 import { Line } from 'react-chartjs-2';
 import { Grid } from '@material-ui/core';
+import classes from './Chart.module.css';
 
 
 const Chart = (props) => {
@@ -11,7 +12,7 @@ const Chart = (props) => {
     const deaths = dailyStats.map(day => day.deaths.total);
 
     return (
-        <Grid xs={12} item style={{width: '70%', margin: '0 auto'}}>
+        <Grid container item xs={12} justify='center' className={classes.wrap}>
           <Line
             data={{
               labels: dates,
